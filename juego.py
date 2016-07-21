@@ -7,9 +7,11 @@ width=900
 height=500
 #Constante para el movimiento
 x=100
-y=304
+y=250
 x1=700
-y1=304
+y1=250
+x2=800
+y2=100
 
 #Declarando la posicion del Sprite
 xixf={}
@@ -39,18 +41,20 @@ pantalla=pygame.display.set_mode((width,height))
 pygame.display.set_caption("QUITS CARS")
 #==================================================
 
-carro=cargar_imagen("imagenes/carro.png",True)
+carro=cargar_imagen("imagenes/Carro2.png",True)
 #cargando carro enemigo
-enemigo=cargar_imagen("imagenes/enemigo.png",True)
+enemigo=cargar_imagen("imagenes/Carro1.png",True)
+enemigo1=cargar_imagen("imagenes/Carro3.png",True)
 #cargando imagen de fondo
-carretera=cargar_imagen("imagenes/camino.png",True)
+carretera=cargar_imagen("imagenes/Carretera.png",True)
 #carro_inv=pygame.transform.flip(carro,True,False)
 reloj=pygame.time.Clock()
-pantalla.blit(carro,(100,304))
+pantalla.blit(carro,(100,250))
 #posicion del enemigo
 pantalla.blit(enemigo,(x1,y1))
+pantalla.blit(enemigo1,(x2,y2))
 #posicion del carretero
-pantalla.blit(carretera,(90,250))
+pantalla.blit(carretera,(0,0))
 pygame.display.flip()
 
 while True:
@@ -58,6 +62,7 @@ while True:
 		if eventos.type== QUIT:
 			sys.exit(0)
 	x1-=5
+	x2-=4
 	x+=5
 
     #Ubicacion del srite en la imagen
@@ -99,6 +104,8 @@ while True:
 		y-=5
 	if teclado [K_s]:
 		y+=5
+
+
 		
 
 	reloj.tick(25)
@@ -107,9 +114,10 @@ while True:
 		#pantalla.blit(carro(x,y),(xixf[i]))
 	#if direccion==False:
 		#pantalla.blit(carro_inv(x,y),(Rxixf[i]))
-	pantalla.blit(carretera,(50,250))
+	pantalla.blit(carretera,(0,0))
 	pantalla.blit(carro,(x,y))
 	pantalla.blit(enemigo,(x1,y1))
+	pantalla.blit(enemigo1,(x2,y2))
 	pygame.display.flip()
 
       
