@@ -105,11 +105,9 @@ while True:
 	if teclado [K_s]:
 		y+=5
 
-
-		
-
 	reloj.tick(25)
 	pantalla.fill((0,0,0))
+	#No funciona ete codigo de abajo. 
 	#if direccion==True:
 		#pantalla.blit(carro(x,y),(xixf[i]))
 	#if direccion==False:
